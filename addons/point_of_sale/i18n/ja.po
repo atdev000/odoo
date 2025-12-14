@@ -10,12 +10,13 @@
 # "Dylan Kiss (dyki)" <dyki@odoo.com>, 2025.
 # "Junko Augias (juau)" <juau@odoo.com>, 2025.
 # Weblate <noreply-mt-weblate@weblate.org>, 2025.
+# Yoshi Tashiro <tashiro@quartile.co>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-28 18:35+0000\n"
-"PO-Revision-Date: 2025-11-25 07:30+0000\n"
+"POT-Creation-Date: 2025-12-05 18:35+0000\n"
+"PO-Revision-Date: 2025-12-09 14:06+0000\n"
 "Last-Translator: \"Junko Augias (juau)\" <juau@odoo.com>\n"
 "Language-Team: Japanese <https://translate.odoo.com/projects/odoo-19/"
 "point_of_sale/ja/>\n"
@@ -24,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.12.2\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #. module: point_of_sale
 #. odoo-python
@@ -616,7 +617,7 @@ msgstr "Pine Labs決済端末での支払いを受け付ける"
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.res_config_settings_view_form
 msgid "Accept payments with a QFPay payment terminal"
-msgstr ""
+msgstr "QFPay決済端末で支払いを受け付ける"
 
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.res_config_settings_view_form
@@ -781,7 +782,7 @@ msgstr "チップ追加"
 #. odoo-javascript
 #: code:addons/point_of_sale/static/src/app/screens/product_screen/control_buttons/orderline_note_button/orderline_note_button.js:0
 msgid "Add a "
-msgstr ""
+msgstr "追加 "
 
 #. module: point_of_sale
 #: model:ir.model.fields,help:point_of_sale.field_res_company__point_of_sale_ticket_unique_code
@@ -1020,7 +1021,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/point_of_sale/static/src/app/components/popups/number_popup/number_popup.js:0
 msgid "Amount of guests"
-msgstr ""
+msgstr "ゲスト人数"
 
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_pos_close_session_wizard__amount_to_balance
@@ -1384,6 +1385,12 @@ msgid "Bank"
 msgstr "銀行"
 
 #. module: point_of_sale
+#. odoo-python
+#: code:addons/point_of_sale/models/pos_payment_method.py:0
+msgid "Bank App (QR Code)"
+msgstr ""
+
+#. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_pos_session__bank_payment_ids
 msgid "Bank Payments"
 msgstr "銀行支払"
@@ -1441,7 +1448,7 @@ msgstr "違いを閉じる前に"
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.ticket_validation_screen
 msgid "Billing address:"
-msgstr "請求先住所:"
+msgstr "請求先:"
 
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.view_pos_bill_form
@@ -2577,9 +2584,7 @@ msgstr "新規プロダクト作成"
 msgid ""
 "Create one invoice for all orders related to same customer and same "
 "invoicing address"
-msgstr ""
-"同じ顧客、同じ請求先住所に関連するすべてのオーダに対して1つの請求書を作成しま"
-"す。"
+msgstr "同じ顧客、同じ請求先に関連するすべてのオーダに対して1つの請求書を作成します。"
 
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_pos_bill__create_uid
@@ -5299,6 +5304,12 @@ msgstr "その日に空きがありません"
 #: model:ir.model.fields,field_description:point_of_sale.field_res_config_settings__barcode_nomenclature_id
 msgid "Nomenclature"
 msgstr "体系"
+
+#. module: point_of_sale
+#. odoo-python
+#: code:addons/point_of_sale/models/pos_payment_method.py:0
+msgid "None required"
+msgstr ""
 
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.view_report_pos_order_search
@@ -8618,6 +8629,12 @@ msgid "Tel:"
 msgstr "TEL:"
 
 #. module: point_of_sale
+#. odoo-python
+#: code:addons/point_of_sale/models/pos_payment_method.py:0
+msgid "Terminal"
+msgstr ""
+
+#. module: point_of_sale
 #. odoo-javascript
 #: code:addons/point_of_sale/static/src/backend/test_epos/test_epos_button.xml:0
 msgid "Test"
@@ -10731,6 +10748,12 @@ msgstr "qx9h1"
 #: code:addons/point_of_sale/models/pos_order.py:0
 msgid "return"
 msgstr "返品"
+
+#. module: point_of_sale
+#. odoo-python
+#: code:addons/point_of_sale/models/pos_payment_method.py:0
+msgid "terminal"
+msgstr ""
 
 #. module: point_of_sale
 #. odoo-javascript

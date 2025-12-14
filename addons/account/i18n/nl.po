@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-28 18:35+0000\n"
-"PO-Revision-Date: 2025-11-24 12:08+0000\n"
+"POT-Creation-Date: 2025-12-12 18:35+0000\n"
+"PO-Revision-Date: 2025-12-11 13:01+0000\n"
 "Last-Translator: Bren Driesen <brdri@odoo.com>\n"
 "Language-Team: Dutch <https://translate.odoo.com/projects/odoo-19/account/nl/"
 ">\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12.2\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #. module: account
 #: model:ir.model.fields,help:account.field_account_journal__type
@@ -439,7 +439,7 @@ msgstr "1.05"
 #. module: account
 #: model:account.payment.term,name:account.account_payment_term_30_days_end_month_the_10
 msgid "10 Days after End of Next Month"
-msgstr "10 dagen na het einde van de maand"
+msgstr "10 dagen na het einde van de volgende maand"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_statement
@@ -2583,6 +2583,14 @@ msgid "Account Chart Template"
 msgstr "Sjabloon grootboekschema"
 
 #. module: account
+#. odoo-python
+#: code:addons/account/models/account_code_mapping.py:0
+msgid ""
+"Account Code Mapping cannot be accessed directly. It is designed to be used "
+"only through the Chart of Accounts."
+msgstr ""
+
+#. module: account
 #: model:ir.model.fields,field_description:account.field_account_report_line__account_codes_formula
 msgid "Account Codes Formula Shortcut"
 msgstr "Sneltoets formules voor rekeningen"
@@ -4155,6 +4163,11 @@ msgid "Attachments"
 msgstr "Bijlagen"
 
 #. module: account
+#: model:ir.model.fields,field_description:account.field_account_move_send_wizard__attachments_not_supported
+msgid "Attachments Not Supported"
+msgstr ""
+
+#. module: account
 #: model:ir.actions.act_window,name:account.action_account_audit_trail_report
 #: model:ir.ui.menu,name:account.account_audit_trail_menu
 msgid "Audit Trail"
@@ -4164,7 +4177,7 @@ msgstr "Audittrail"
 #: model:ir.model.fields,field_description:account.field_account_bank_statement_line__audit_trail_message_ids
 #: model:ir.model.fields,field_description:account.field_account_move__audit_trail_message_ids
 msgid "Audit Trail Messages"
-msgstr "Audit Trail-berichten"
+msgstr "Audittrail-berichten"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_report_expression__auditable
@@ -5007,7 +5020,9 @@ msgstr "Kan betalingen groeperen"
 #. odoo-python
 #: code:addons/account/models/company.py:0
 msgid "Can't disable restricted audit trail: forced by localization."
-msgstr "Kan beperkt auditspoor niet uitschakelen: verplicht door lokalisatie."
+msgstr ""
+"Kan audittrail met beperkte toegang niet uitschakelen: afgedwongen door "
+"lokalisatie."
 
 #. module: account
 #. odoo-javascript
@@ -7480,6 +7495,11 @@ msgid "Display Amount"
 msgstr "Bedrag weergeven"
 
 #. module: account
+#: model:ir.model.fields,field_description:account.field_account_move_send_wizard__display_attachments_widget
+msgid "Display Attachments Widget"
+msgstr ""
+
+#. module: account
 #: model:ir.model.fields,field_description:account.field_account_payment_term_line__display_days_next_month
 msgid "Display Days Next Month"
 msgstr "Toon dagen volgende maand"
@@ -8489,7 +8509,7 @@ msgstr "Verwacht een grootboek grootboekschema"
 #: model:ir.model.fields.selection,name:account.selection__account_account__internal_group__expense
 #: model:ir.model.fields.selection,name:account.selection__account_automatic_entry_wizard__account_type__expense
 msgid "Expense"
-msgstr "Declaratie"
+msgstr "Onkost"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_product_category__property_account_expense_categ_id
@@ -8997,7 +9017,7 @@ msgstr "Forceer"
 #. module: account
 #: model:ir.model.fields,field_description:account.field_res_company__force_restrictive_audit_trail
 msgid "Force Audit Trail"
-msgstr "Audit trail forceren"
+msgstr "Audittrail afdwingen"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_validate_account_move__force_hash
@@ -9007,7 +9027,7 @@ msgstr "Hash afdwingen"
 #. module: account
 #: model:ir.model.fields,field_description:account.field_res_config_settings__force_restrictive_audit_trail
 msgid "Forced Audit Trail"
-msgstr "Geforceerde audit trail"
+msgstr "Afgedwongen audittrail"
 
 #. module: account
 #: model:ir.model.fields,help:account.field_account_account__currency_id
@@ -9605,6 +9625,11 @@ msgstr "Hotels"
 #: model_terms:ir.ui.view,arch_db:account.res_config_settings_view_form
 msgid "How total tax amount is computed in orders and invoices"
 msgstr "Hoe het btw-totaal berekend is in orders en facturen"
+
+#. module: account
+#: model_terms:ir.ui.view,arch_db:account.report_invoice_document
+msgid "ICE:"
+msgstr ""
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_account__id
@@ -10988,6 +11013,12 @@ msgstr "Is restitutie"
 #: model:ir.model.fields,field_description:account.field_account_payment_register__is_register_payment_on_draft
 msgid "Is Register Payment On Draft"
 msgstr "Is Registerbetaling op afschrift"
+
+#. module: account
+#: model:ir.model.fields,field_description:account.field_account_bank_statement_line__is_sale_installed
+#: model:ir.model.fields,field_description:account.field_account_move__is_sale_installed
+msgid "Is Sale Installed"
+msgstr ""
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_move_line__is_same_currency
@@ -13582,7 +13613,7 @@ msgstr "PDF zonder betaling"
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.res_config_settings_view_form
 msgid "PEPPOL Electronic Invoicing"
-msgstr "PEPPOL elektronische facturering"
+msgstr "PEPPOL elektronische facturatie"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_res_config_settings__module_account_peppol
@@ -15288,13 +15319,13 @@ msgstr "Beperkt"
 #. module: account
 #: model:ir.model.fields,field_description:account.field_res_config_settings__restrictive_audit_trail
 msgid "Restricted Audit Trail"
-msgstr "Audit trail met beperkte toegang"
+msgstr "Audittrail met beperkte toegang"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_res_company__restrictive_audit_trail
 #: model_terms:ir.ui.view,arch_db:account.res_config_settings_view_form
 msgid "Restrictive Audit Trail"
-msgstr "Beperkte audit trail"
+msgstr "Audittrail met beperkte toegang"
 
 #. module: account
 #: model:account.account,description:account.2_account_account_us_pension
@@ -15427,7 +15458,7 @@ msgstr "Controleer het grootboekschema"
 #: code:addons/account/wizard/account_secure_entries_wizard.py:0
 #: model:ir.actions.server,name:account.accountant_confirm_entries_action
 msgid "Review Entries"
-msgstr "Herziening Inzendingen"
+msgstr "Boekingen beoordelen"
 
 #. module: account
 #. odoo-python
@@ -18925,7 +18956,7 @@ msgstr "Deze factuur wordt op de achtergrond verzonden."
 #. module: account
 #: model_terms:ir.actions.act_window,help:account.action_account_audit_trail_report
 msgid "This is the Audit Trail Report"
-msgstr "Dit is het audittrailrapport"
+msgstr "Dit is het audittrail-rapport"
 
 #. module: account
 #: model_terms:ir.actions.act_window,help:account.open_account_journal_dashboard_kanban
@@ -19165,8 +19196,8 @@ msgid ""
 "they have been posted.\n"
 "Instead, you can cancel the journal entry."
 msgstr ""
-"Om de beperkte audit trail te behouden, kun je geboekte boekingen niet "
-"verwijderen.\n"
+"Om de audittrail met beperkte toegang te behouden, kun je geboekte boekingen "
+"niet verwijderen.\n"
 "In plaats daarvan kun je de boeking annuleren."
 
 #. module: account
@@ -20945,16 +20976,6 @@ msgstr ""
 
 #. module: account
 #. odoo-python
-#: code:addons/account/models/account_account.py:0
-msgid ""
-"You cannot have more than one account with \"Current Year Earnings\" as "
-"type. (accounts: %s)"
-msgstr ""
-"Je kunt niet meer dan één rekening hebben met als type \"Huidige "
-"Jaarwinst\". (rekeningen: %s)"
-
-#. module: account
-#. odoo-python
 #: code:addons/account/models/company.py:0
 msgid ""
 "You cannot import the \"openning_balance\" if the opening move (%s) is "
@@ -21044,7 +21065,8 @@ msgstr "Je kunt geen betalingen registreren voor memoriaalboekingen."
 #. odoo-python
 #: code:addons/account/models/ir_attachment.py:0
 msgid "You cannot remove parts of a restricted audit trail."
-msgstr "Je kunt geen onderdelen van een beperkte audit trail verwijderen."
+msgstr ""
+"Je kunt geen onderdelen van een audittrail met beperkte toegang verwijderen."
 
 #. module: account
 #. odoo-python
@@ -21053,8 +21075,8 @@ msgid ""
 "You cannot remove parts of a restricted audit trail. Archive the record "
 "instead."
 msgstr ""
-"Je kunt geen onderdelen van een beperkte audit trail verwijderen. Archiveer "
-"het record in plaats daarvan."
+"Je kunt geen onderdelen van een audittrail met beperkte toegang verwijderen. "
+"Archiveer het record in plaats daarvan."
 
 #. module: account
 #. odoo-python
@@ -21927,6 +21949,13 @@ msgid ""
 msgstr ""
 "{{ object.company_id.name }} Self-billing verkoopfactuur (Ref {{ object.name "
 "or 'n/a' }})"
+
+#~ msgid ""
+#~ "You cannot have more than one account with \"Current Year Earnings\" as "
+#~ "type. (accounts: %s)"
+#~ msgstr ""
+#~ "Je kunt niet meer dan één rekening hebben met als type \"Huidige "
+#~ "Jaarwinst\". (rekeningen: %s)"
 
 #~ msgid "This setting cannot be changed after an invoice is created."
 #~ msgstr ""

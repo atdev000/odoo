@@ -807,7 +807,7 @@ class HrEmployee(models.Model):
     def _compute_work_contact_details(self):
         for employee in self:
             if employee.work_contact_id:
-                if len(employee.work_contact_id.employee_ids) == 1:
+                if len(employee.work_contact_id.employee_ids) <= 1:
                     employee.work_phone = employee.work_contact_id.phone
                     employee.work_email = employee.work_contact_id.email
 
@@ -817,7 +817,7 @@ class HrEmployee(models.Model):
             if not employee.work_contact_id:
                 employees_without_work_contact += employee
             else:
-                if len(employee.work_contact_id.employee_ids) == 1:
+                if len(employee.work_contact_id.employee_ids) <= 1:
                     employee.work_contact_id.sudo().write({
                         'email': employee.work_email,
                         'phone': employee.work_phone,
@@ -1396,7 +1396,7 @@ We can redirect you to the public employee list."""
             self._remove_work_contact_id(user, vals.get('company_id'))
         if 'work_permit_expiration_date' in vals:
             vals['work_permit_scheduled_activity'] = False
-        if 'tz' in vals:
+        if vals.get('tz'):
             users_to_update = self.env['res.users']
             for employee in self:
                 if employee.user_id and employee.company_id == employee.user_id.company_id and vals['tz'] != employee.user_id.tz:

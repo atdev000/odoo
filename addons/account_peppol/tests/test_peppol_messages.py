@@ -219,6 +219,24 @@ class TestPeppolMessage(TestAccountMoveSendCommon, MailCommon):
 
         return super()._request_handler(s, r, **kw)
 
+    def test_non_xml_compatible_characters(self):
+        """
+        Test that non xml compatible characters doesn't block Peppol Invoice sending
+        """
+        move = self.create_move(self.valid_partner)
+        product_a = self._create_product(
+            name='Test\x02Product',
+            lst_price=1000.0,
+            standard_price=800.0
+        )
+        move.invoice_line_ids[0].product_id = product_a
+        move.action_post()
+
+        wizard = self.create_send_and_print(move, sending_methods=['peppol'])
+        self.assertEqual(wizard.invoice_edi_format, 'ubl_bis3')
+        wizard.action_send_and_print()
+        self.assertEqual(self._get_mail_message(move).preview, 'The invoice has been sent to the Peppol Access Point. The following attachments were sent with the XML:')
+
     def test_attachment_placeholders(self):
         move = self.create_move(self.valid_partner)
         move.action_post()
@@ -242,7 +260,7 @@ class TestPeppolMessage(TestAccountMoveSendCommon, MailCommon):
 
         wizard.sending_methods = ['peppol']
         wizard.action_send_and_print()
-        self.assertEqual(self._get_mail_message(move).preview, 'The document has been sent to Peppol for processing')
+        self.assertEqual(self._get_mail_message(move).preview, 'The invoice has been sent to the Peppol Access Point. The following attachments were sent with the XML:')
 
     def test_send_peppol_alerts_not_valid_partner(self):
         move = self.create_move(self.invalid_partner)
@@ -362,7 +380,8 @@ class TestPeppolMessage(TestAccountMoveSendCommon, MailCommon):
             }])
 
     def test_received_bill_notification(self):
-        self.env.company.peppol_purchase_journal_id.incoming_einvoice_notification_email = 'oops_another_bill@example.com'
+        peppol_purchase_journal = self.env.company.peppol_purchase_journal_id
+        peppol_purchase_journal.incoming_einvoice_notification_email = 'oops_another_bill@example.com'
         self.env.company.email = 'hq@example.com'
 
         with self.mock_mail_gateway():
@@ -371,7 +390,7 @@ class TestPeppolMessage(TestAccountMoveSendCommon, MailCommon):
         self.assertSentEmail(
             '"company_1_data" <hq@example.com>',
             ['oops_another_bill@example.com'],
-            subject='New Electronic Invoices Received',
+            subject=f"{self.env.company.name} - New invoice in {peppol_purchase_journal.display_name} journal",
         )
 
     def test_validate_partner(self):
